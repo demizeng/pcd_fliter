@@ -50,7 +50,8 @@
 #include <pcl/io/pcd_io.h>           //PCD读写类相关的头文件
 #include <pcl/point_types.h>      //PCL中支持的点类型的头文件
 #include <pcl/point_cloud.h>
-
+#include <pcl/filters/passthrough.h>   //直通滤波器
+#include <pcl/filters/statistical_outlier_removal.h>   //统计滤波器
 #include <boost/chrono.hpp>
 
 #include "pcl/io/openni2/openni.h"
@@ -126,6 +127,7 @@ class OpenNI2Viewer
 public:
   typedef pcl::PointCloud<PointType> Cloud;
   typedef typename Cloud::ConstPtr CloudConstPtr;
+  typedef typename Cloud::Ptr CloudPtr;
 
   OpenNI2Viewer (pcl::io::OpenNI2Grabber& grabber)
     : cloud_viewer_ (new pcl::visualization::PCLVisualizer ("PCL OpenNI2 cloud"))
@@ -215,6 +217,8 @@ public:
     {
       boost::shared_ptr<pcl::io::openni2::Image> image;
       CloudConstPtr cloud;
+      CloudPtr cloud_filtered(new Cloud);
+      CloudPtr cloud_medium(new Cloud);
       pcd_interval++;
 
       cloud_viewer_->spinOnce ();
@@ -238,6 +242,26 @@ public:
       }
 
 
+      if(cloud)
+      {
+        //滤波之后，有序点云会变成无序点云
+        //直通滤波器，减除背景
+        pcl::PassThrough<PointType> pass;
+        pass.setInputCloud (cloud);
+        pass.setFilterFieldName ("z");
+        pass.setFilterLimits (0.0, 1);
+        //pass.setFilterLimitsNegative (true);
+        pass.filter (*cloud_medium);
+
+        //统计滤波器，删除离群点
+        pcl::StatisticalOutlierRemoval<PointType> Static;   //创建滤波器对象
+        Static.setInputCloud (cloud_medium);                           //设置待滤波的点云
+        Static.setMeanK (100);                               //设置在进行统计时考虑查询点临近点数
+        Static.setStddevMulThresh (0.5);                      //设置判断是否为离群点的阀值
+        Static.filter (*cloud_filtered);                    //存储
+
+      }
+
 
       if (cloud)
       {
@@ -251,9 +275,9 @@ public:
           cloud_init = !cloud_init;
         }
 
-        if (!cloud_viewer_->updatePointCloud (cloud, "OpenNICloud"))
+        if (!cloud_viewer_->updatePointCloud (cloud_filtered, "OpenNICloud"))
         {
-          cloud_viewer_->addPointCloud (cloud, "OpenNICloud");
+          cloud_viewer_->addPointCloud (cloud_filtered, "OpenNICloud");
           cloud_viewer_->resetCameraViewpoint ("OpenNICloud");
           cloud_viewer_->setCameraPosition (
             0,0,0,		// Position
