@@ -124,6 +124,11 @@ pcl_openni2: /usr/local/lib/libpcl_cuda_segmentation.so
 pcl_openni2: /usr/local/lib/libpcl_cuda_features.so
 pcl_openni2: /usr/local/lib/libpcl_cuda_sample_consensus.so
 pcl_openni2: /usr/local/lib/libpcl_outofcore.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_containers.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_utils.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_octree.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_segmentation.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_features.so
 pcl_openni2: /usr/local/lib/libpcl_people.so
 pcl_openni2: /usr/lib/x86_64-linux-gnu/libboost_system.so
 pcl_openni2: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -162,6 +167,11 @@ pcl_openni2: /usr/local/lib/libpcl_cuda_segmentation.so
 pcl_openni2: /usr/local/lib/libpcl_cuda_features.so
 pcl_openni2: /usr/local/lib/libpcl_cuda_sample_consensus.so
 pcl_openni2: /usr/local/lib/libpcl_outofcore.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_containers.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_utils.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_octree.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_segmentation.so
+pcl_openni2: /usr/local/lib/libpcl_gpu_features.so
 pcl_openni2: /usr/local/lib/libpcl_people.so
 pcl_openni2: /usr/lib/libvtkViews.so.5.8.0
 pcl_openni2: /usr/lib/libvtkInfovis.so.5.8.0

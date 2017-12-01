@@ -315,6 +315,15 @@ PCL_CUDA_FEATURES_LIBRARY:FILEPATH=/usr/local/lib/libpcl_cuda_features.so
 //path to pcl_cuda_features library debug
 PCL_CUDA_FEATURES_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libpcl_cuda_features.so
 
+//path to cuda_io headers
+PCL_CUDA_IO_INCLUDE_DIR:PATH=PCL_CUDA_IO_INCLUDE_DIR-NOTFOUND
+
+//path to pcl_cuda_io library
+PCL_CUDA_IO_LIBRARY:FILEPATH=PCL_CUDA_IO_LIBRARY-NOTFOUND
+
+//path to pcl_cuda_io library debug
+PCL_CUDA_IO_LIBRARY_DEBUG:FILEPATH=PCL_CUDA_IO_LIBRARY_DEBUG-NOTFOUND
+
 //path to cuda_sample_consensus headers
 PCL_CUDA_SAMPLE_CONSENSUS_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
 
@@ -356,6 +365,51 @@ PCL_FILTERS_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libpcl_filters.so
 
 //path to geometry headers
 PCL_GEOMETRY_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
+
+//path to gpu_containers headers
+PCL_GPU_CONTAINERS_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
+
+//path to pcl_gpu_containers library
+PCL_GPU_CONTAINERS_LIBRARY:FILEPATH=/usr/local/lib/libpcl_gpu_containers.so
+
+//path to pcl_gpu_containers library debug
+PCL_GPU_CONTAINERS_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libpcl_gpu_containers.so
+
+//path to gpu_features headers
+PCL_GPU_FEATURES_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
+
+//path to pcl_gpu_features library
+PCL_GPU_FEATURES_LIBRARY:FILEPATH=/usr/local/lib/libpcl_gpu_features.so
+
+//path to pcl_gpu_features library debug
+PCL_GPU_FEATURES_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libpcl_gpu_features.so
+
+//path to gpu_octree headers
+PCL_GPU_OCTREE_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
+
+//path to pcl_gpu_octree library
+PCL_GPU_OCTREE_LIBRARY:FILEPATH=/usr/local/lib/libpcl_gpu_octree.so
+
+//path to pcl_gpu_octree library debug
+PCL_GPU_OCTREE_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libpcl_gpu_octree.so
+
+//path to gpu_segmentation headers
+PCL_GPU_SEGMENTATION_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
+
+//path to pcl_gpu_segmentation library
+PCL_GPU_SEGMENTATION_LIBRARY:FILEPATH=/usr/local/lib/libpcl_gpu_segmentation.so
+
+//path to pcl_gpu_segmentation library debug
+PCL_GPU_SEGMENTATION_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libpcl_gpu_segmentation.so
+
+//path to gpu_utils headers
+PCL_GPU_UTILS_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
+
+//path to pcl_gpu_utils library
+PCL_GPU_UTILS_LIBRARY:FILEPATH=/usr/local/lib/libpcl_gpu_utils.so
+
+//path to pcl_gpu_utils library debug
+PCL_GPU_UTILS_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libpcl_gpu_utils.so
 
 //path to io headers
 PCL_IO_INCLUDE_DIR:PATH=/usr/local/include/pcl-1.8
@@ -733,7 +787,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_Flann:INTERNAL=[/usr/lib/x86_64-linux-gnu/libflann_
 //Details about finding OpenNI2
 FIND_PACKAGE_MESSAGE_DETAILS_OpenNI2:INTERNAL=[/usr/lib/libOpenNI2.so][/usr/include/openni2/Include][v()]
 //Details about finding PCL
-FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/local/lib/libpcl_common.so;debug;/usr/local/lib/libpcl_common.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;optimized;/usr/local/lib/libpcl_kdtree.so;debug;/usr/local/lib/libpcl_kdtree.so;optimized;/usr/local/lib/libpcl_octree.so;debug;/usr/local/lib/libpcl_octree.so;optimized;/usr/local/lib/libpcl_search.so;debug;/usr/local/lib/libpcl_search.so;optimized;/usr/local/lib/libpcl_sample_consensus.so;debug;/usr/local/lib/libpcl_sample_consensus.so;optimized;/usr/local/lib/libpcl_filters.so;debug;/usr/local/lib/libpcl_filters.so;/usr/lib/libOpenNI2.so;vtkCommon;vtkFiltering;vtkImaging;vtkGraphics;vtkGenericFiltering;vtkIO;vtkRendering;vtkVolumeRendering;vtkHybrid;vtkWidgets;vtkParallel;vtkInfovis;vtkGeovis;vtkViews;vtkCharts;optimized;/usr/local/lib/libpcl_io.so;debug;/usr/local/lib/libpcl_io.so;optimized;/usr/local/lib/libpcl_features.so;debug;/usr/local/lib/libpcl_features.so;optimized;/usr/local/lib/libpcl_ml.so;debug;/usr/local/lib/libpcl_ml.so;optimized;/usr/local/lib/libpcl_segmentation.so;debug;/usr/local/lib/libpcl_segmentation.so;optimized;/usr/local/lib/libpcl_tracking.so;debug;/usr/local/lib/libpcl_tracking.so;optimized;/usr/local/lib/libpcl_visualization.so;debug;/usr/local/lib/libpcl_visualization.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;optimized;/usr/local/lib/libpcl_surface.so;debug;/usr/local/lib/libpcl_surface.so;optimized;/usr/local/lib/libpcl_registration.so;debug;/usr/local/lib/libpcl_registration.so;optimized;/usr/local/lib/libpcl_keypoints.so;debug;/usr/local/lib/libpcl_keypoints.so;optimized;/usr/local/lib/libpcl_recognition.so;debug;/usr/local/lib/libpcl_recognition.so;optimized;/usr/local/lib/libpcl_stereo.so;debug;/usr/local/lib/libpcl_stereo.so;optimized;/usr/local/lib/libpcl_cuda_segmentation.so;debug;/usr/local/lib/libpcl_cuda_segmentation.so;optimized;/usr/local/lib/libpcl_cuda_features.so;debug;/usr/local/lib/libpcl_cuda_features.so;optimized;/usr/local/lib/libpcl_cuda_sample_consensus.so;debug;/usr/local/lib/libpcl_cuda_sample_consensus.so;optimized;/usr/local/lib/libpcl_outofcore.so;debug;/usr/local/lib/libpcl_outofcore.so;optimized;/usr/local/lib/libpcl_people.so;debug;/usr/local/lib/libpcl_people.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;/usr/lib/libOpenNI2.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;vtkCommon;vtkFiltering;vtkImaging;vtkGraphics;vtkGenericFiltering;vtkIO;vtkRendering;vtkVolumeRendering;vtkHybrid;vtkWidgets;vtkParallel;vtkInfovis;vtkGeovis;vtkViews;vtkCharts][/usr/local/include/pcl-1.8;/usr/include/eigen3;/usr/include;/usr/include/openni2/Include;/usr/include/vtk-5.8][v(1.3)]
+FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/local/lib/libpcl_common.so;debug;/usr/local/lib/libpcl_common.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;optimized;/usr/local/lib/libpcl_kdtree.so;debug;/usr/local/lib/libpcl_kdtree.so;optimized;/usr/local/lib/libpcl_octree.so;debug;/usr/local/lib/libpcl_octree.so;optimized;/usr/local/lib/libpcl_search.so;debug;/usr/local/lib/libpcl_search.so;optimized;/usr/local/lib/libpcl_sample_consensus.so;debug;/usr/local/lib/libpcl_sample_consensus.so;optimized;/usr/local/lib/libpcl_filters.so;debug;/usr/local/lib/libpcl_filters.so;/usr/lib/libOpenNI2.so;vtkCommon;vtkFiltering;vtkImaging;vtkGraphics;vtkGenericFiltering;vtkIO;vtkRendering;vtkVolumeRendering;vtkHybrid;vtkWidgets;vtkParallel;vtkInfovis;vtkGeovis;vtkViews;vtkCharts;optimized;/usr/local/lib/libpcl_io.so;debug;/usr/local/lib/libpcl_io.so;optimized;/usr/local/lib/libpcl_features.so;debug;/usr/local/lib/libpcl_features.so;optimized;/usr/local/lib/libpcl_ml.so;debug;/usr/local/lib/libpcl_ml.so;optimized;/usr/local/lib/libpcl_segmentation.so;debug;/usr/local/lib/libpcl_segmentation.so;optimized;/usr/local/lib/libpcl_tracking.so;debug;/usr/local/lib/libpcl_tracking.so;optimized;/usr/local/lib/libpcl_visualization.so;debug;/usr/local/lib/libpcl_visualization.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;optimized;/usr/local/lib/libpcl_surface.so;debug;/usr/local/lib/libpcl_surface.so;optimized;/usr/local/lib/libpcl_registration.so;debug;/usr/local/lib/libpcl_registration.so;optimized;/usr/local/lib/libpcl_keypoints.so;debug;/usr/local/lib/libpcl_keypoints.so;optimized;/usr/local/lib/libpcl_recognition.so;debug;/usr/local/lib/libpcl_recognition.so;optimized;/usr/local/lib/libpcl_stereo.so;debug;/usr/local/lib/libpcl_stereo.so;optimized;/usr/local/lib/libpcl_cuda_segmentation.so;debug;/usr/local/lib/libpcl_cuda_segmentation.so;optimized;/usr/local/lib/libpcl_cuda_features.so;debug;/usr/local/lib/libpcl_cuda_features.so;optimized;/usr/local/lib/libpcl_cuda_sample_consensus.so;debug;/usr/local/lib/libpcl_cuda_sample_consensus.so;optimized;/usr/local/lib/libpcl_outofcore.so;debug;/usr/local/lib/libpcl_outofcore.so;optimized;/usr/local/lib/libpcl_gpu_containers.so;debug;/usr/local/lib/libpcl_gpu_containers.so;optimized;/usr/local/lib/libpcl_gpu_utils.so;debug;/usr/local/lib/libpcl_gpu_utils.so;optimized;/usr/local/lib/libpcl_gpu_octree.so;debug;/usr/local/lib/libpcl_gpu_octree.so;optimized;/usr/local/lib/libpcl_gpu_segmentation.so;debug;/usr/local/lib/libpcl_gpu_segmentation.so;optimized;/usr/local/lib/libpcl_gpu_features.so;debug;/usr/local/lib/libpcl_gpu_features.so;optimized;/usr/local/lib/libpcl_people.so;debug;/usr/local/lib/libpcl_people.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;/usr/lib/libOpenNI2.so;optimized;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;debug;/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a;vtkCommon;vtkFiltering;vtkImaging;vtkGraphics;vtkGenericFiltering;vtkIO;vtkRendering;vtkVolumeRendering;vtkHybrid;vtkWidgets;vtkParallel;vtkInfovis;vtkGeovis;vtkViews;vtkCharts][/usr/local/include/pcl-1.8;/usr/include/eigen3;/usr/include;/usr/include/openni2/Include;/usr/include/vtk-5.8][v(1.3)]
 //Details about finding PCL_2D
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_2D:INTERNAL=[/usr/local/include/pcl-1.8][v()]
 //Details about finding PCL_COMMON
@@ -752,6 +806,16 @@ FIND_PACKAGE_MESSAGE_DETAILS_PCL_FEATURES:INTERNAL=[/usr/local/lib/libpcl_featur
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_FILTERS:INTERNAL=[/usr/local/lib/libpcl_filters.so][/usr/local/include/pcl-1.8][v()]
 //Details about finding PCL_GEOMETRY
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_GEOMETRY:INTERNAL=[/usr/local/include/pcl-1.8][v()]
+//Details about finding PCL_GPU_CONTAINERS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_GPU_CONTAINERS:INTERNAL=[/usr/local/lib/libpcl_gpu_containers.so][/usr/local/include/pcl-1.8][v()]
+//Details about finding PCL_GPU_FEATURES
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_GPU_FEATURES:INTERNAL=[/usr/local/lib/libpcl_gpu_features.so][/usr/local/include/pcl-1.8][v()]
+//Details about finding PCL_GPU_OCTREE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_GPU_OCTREE:INTERNAL=[/usr/local/lib/libpcl_gpu_octree.so][/usr/local/include/pcl-1.8][v()]
+//Details about finding PCL_GPU_SEGMENTATION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_GPU_SEGMENTATION:INTERNAL=[/usr/local/lib/libpcl_gpu_segmentation.so][/usr/local/include/pcl-1.8][v()]
+//Details about finding PCL_GPU_UTILS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_GPU_UTILS:INTERNAL=[/usr/local/lib/libpcl_gpu_utils.so][/usr/local/include/pcl-1.8][v()]
 //Details about finding PCL_IO
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_IO:INTERNAL=[/usr/local/lib/libpcl_io.so][/usr/local/include/pcl-1.8][v()]
 //Details about finding PCL_KDTREE
@@ -816,6 +880,26 @@ PCL_FEATURES_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 PCL_FILTERS_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PCL_FILTERS_LIBRARY_DEBUG
 PCL_FILTERS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_CONTAINERS_LIBRARY
+PCL_GPU_CONTAINERS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_CONTAINERS_LIBRARY_DEBUG
+PCL_GPU_CONTAINERS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_FEATURES_LIBRARY
+PCL_GPU_FEATURES_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_FEATURES_LIBRARY_DEBUG
+PCL_GPU_FEATURES_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_OCTREE_LIBRARY
+PCL_GPU_OCTREE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_OCTREE_LIBRARY_DEBUG
+PCL_GPU_OCTREE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_SEGMENTATION_LIBRARY
+PCL_GPU_SEGMENTATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_SEGMENTATION_LIBRARY_DEBUG
+PCL_GPU_SEGMENTATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_UTILS_LIBRARY
+PCL_GPU_UTILS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_GPU_UTILS_LIBRARY_DEBUG
+PCL_GPU_UTILS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PCL_IO_LIBRARY
 PCL_IO_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PCL_IO_LIBRARY_DEBUG

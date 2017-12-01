@@ -196,6 +196,7 @@ public:
     cloud_viewer_->registerMouseCallback (&OpenNI2Viewer::mouse_callback, *this);
     cloud_viewer_->registerKeyboardCallback (&OpenNI2Viewer::keyboard_callback, *this);
     cloud_viewer_->setCameraFieldOfView (1.02259994f);
+    cloud_viewer_->addCoordinateSystem(1.0);
     boost::function<void (const CloudConstPtr&) > cloud_cb = boost::bind (&OpenNI2Viewer::cloud_callback, this, _1);
     boost::signals2::connection cloud_connection = grabber_.registerCallback (cloud_cb);
 
@@ -219,7 +220,7 @@ public:
       CloudConstPtr cloud;
       CloudPtr cloud_filtered(new Cloud);
       CloudPtr cloud_medium(new Cloud);
-      pcd_interval++;
+     // pcd_interval++;    //计数，间隔一定次数保存一次PCD数据
 
       cloud_viewer_->spinOnce ();
 
@@ -230,38 +231,48 @@ public:
         cloud_mutex_.unlock ();
 
       }
-
-      if(cloud && (pcd_interval>600) && (pcd_collected<10))
+      //保存数据
+      //if(cloud && (pcd_interval>=5) && (pcd_collected<100))
+      if(cloud && (pcd_collected<100))
       {
           char pcd_file_name[20];
-          sprintf(pcd_file_name,"face%d.pcd",pcd_collected++);
+          sprintf(pcd_file_name,"zjw_face%d.pcd",pcd_collected++);
           Cloud cloud_pp;
           cloud_pp=*cloud;//将指针类型转换为点类型：pcl::PointCloud::Ptr  pcl::PointCloud
           pcl::io::savePCDFileASCII(pcd_file_name,cloud_pp);
-          pcd_interval=0;
+          //pcd_interval=0;
       }
-
 
       if(cloud)
       {
         //滤波之后，有序点云会变成无序点云
-        //直通滤波器，减除背景
+        //直通滤波器，在Z轴向进行滤波
         pcl::PassThrough<PointType> pass;
         pass.setInputCloud (cloud);
         pass.setFilterFieldName ("z");
         pass.setFilterLimits (0.0, 1);
-        //pass.setFilterLimitsNegative (true);
         pass.filter (*cloud_medium);
 
         //统计滤波器，删除离群点
         pcl::StatisticalOutlierRemoval<PointType> Static;   //创建滤波器对象
-        Static.setInputCloud (cloud_medium);                           //设置待滤波的点云
-        Static.setMeanK (100);                               //设置在进行统计时考虑查询点临近点数
-        Static.setStddevMulThresh (0.5);                      //设置判断是否为离群点的阀值
+        Static.setInputCloud (cloud_medium);                //设置待滤波的点云
+        Static.setMeanK (100);                              //设置在进行统计时考虑查询点临近点数
+        Static.setStddevMulThresh (0.5);                    //设置判断是否为离群点的阀值
         Static.filter (*cloud_filtered);                    //存储
 
       }
-
+/*
+      //保存数据
+      if(cloud_filtered && (pcd_interval>600) && (pcd_collected<10))
+      {
+          char pcd_file_name[20];
+          sprintf(pcd_file_name,"face%d_filtered.pcd",pcd_collected++);
+          Cloud cloud_pp;
+          cloud_pp=*cloud_filtered;//将指针类型转换为点类型：pcl::PointCloud::Ptr  pcl::PointCloud
+          pcl::io::savePCDFileASCII(pcd_file_name,cloud_pp);
+          pcd_interval=0;
+      }
+*/
 
       if (cloud)
       {
@@ -275,7 +286,7 @@ public:
           cloud_init = !cloud_init;
         }
 
-        if (!cloud_viewer_->updatePointCloud (cloud_filtered, "OpenNICloud"))
+        if (!cloud_viewer_->updatePointCloud (cloud_filtered, "OpenNICloud")) //可视化滤波后的点云数据
         {
           cloud_viewer_->addPointCloud (cloud_filtered, "OpenNICloud");
           cloud_viewer_->resetCameraViewpoint ("OpenNICloud");
